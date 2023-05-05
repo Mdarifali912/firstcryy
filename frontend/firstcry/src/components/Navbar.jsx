@@ -7,7 +7,7 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
+  
   Popover,
   PopoverTrigger,
   PopoverContent,
@@ -27,6 +27,7 @@ import {
 } from "@chakra-ui/icons";
 import { Input } from "@chakra-ui/react";
 import { Select } from "@chakra-ui/react";
+import { Link } from "react-router-dom"; 
 // import { DesktopNav } from "@react-icons/all-files/fa/DesktopNav";
 
 export default function Navbar() {
@@ -91,55 +92,21 @@ export default function Navbar() {
           direction={"row"}
           spacing={6}
         >
-          <Select border={"none"} w={"34%"}  placeholder="More">
+          <Select border={"none"} w={"10%"}  placeholder="More">
             <option value="option1">Find Stores</option>
             <option value="option2">Find Preschool</option>
             <option value="option3">Open store</option>
             <option value="option3">Open a preschools</option>
           </Select>
-          <Button 
-            as={"a"}
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"grey"}
-            bg={"white.300"}
-            href={"/productpage"}
-            _hover={{
-              bg: "rgb(255,217,28)",
-            }}
-          >
-            Product 
-          </Button>
-          <Button
-            as={"a"}
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"grey"}
-            bg={"white.300"}
-            href={"/login"}
-            _hover={{
-              bg: "rgb(255,217,28)",
-            }}
-          >
-            Log In
-          </Button>
+          
+          <Link to="/productpage">Product Page</Link>
+          <Link to="/login">Login</Link>
+          <Link to="/signup">Signup</Link>
+          <Link to="/cart">CART <span style={{"color":"red"}}>2</span></Link>
 
-          <Button
-            as={"a"}
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"grey"}
-            bg={"white.300"}
-            href={"/signup"}
-            _hover={{
-              bg: "rgb(255,217,28)",
-            }}
-          >
-            Sign Up
-          </Button>
+          
+
+          
           {/* <BsCartDash/> */}
         </Stack>
       </Flex>
